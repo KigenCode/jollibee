@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 
+import pkg_resources
+installed_packages = pkg_resources.working_set
+print([f"{i.key}=={i.version}" for i in installed_packages])
+
 app = Flask(__name__)
 
 # Custom Knapsack Function
